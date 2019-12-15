@@ -1,7 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  article.container #{content}
+    article.container
+    each p in poeti
+       div
+        h2
+         | #{p.name}
+        img(src=`/${p.image}`)
+        
+  
   
 
