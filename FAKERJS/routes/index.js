@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-let poeti = new Array();
+const poeti = require('../vettorePoeti');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.send("Homepage Poeti");
+    res.render('index', {title: 'Homepage poeti', poeti:poeti});
 });
 module.exports = router;

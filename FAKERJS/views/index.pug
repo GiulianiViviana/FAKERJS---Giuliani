@@ -1,8 +1,12 @@
 extends layout
 
 block content
+    title #{title}
     article.container
-    
-  
+    each poeta in poeti
+      div
+        a(href=`/details?id=${poeta.id}`)
+            h2 #{poeta.nome} #{poeta.cognome}
+        img(src=`${poeta.immagine}`)
   
 
