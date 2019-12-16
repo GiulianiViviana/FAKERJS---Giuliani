@@ -3,6 +3,32 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const fs = require('fs');
+var faker = require('faker');
+
+poeti = new Array();
+for(let i=0;i<10;i++){
+    oggetto = {
+        id : i,
+        nome : faker.name.firstName(),
+        cognome : faker.name.lastName(),
+        email : faker.internet.email(),
+        card : faker.helpers.createCard(),
+        immagine : faker.image.people(),
+        sitoWeb : faker.internet.url(),
+        nazionalita : faker.address.country(),
+        poesie: [
+            faker.lorem.paragraph(),
+            faker.lorem.paragraph(),
+            faker.lorem.paragraph()
+        ]
+    }
+    poeti.push(oggetto);
+}
+
+let data = JSON.stringify(poeti);
+fs.writeFileSync('vettorePoeti.json', data);
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
