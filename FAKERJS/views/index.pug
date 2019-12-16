@@ -5,7 +5,7 @@ block content
     article.container
     each poeta in poeti
       div
-        a(href=`/details?id=${poeta.id}`)
+        a(href=`/profilo?id=${poeta.id}`)
             h2 #{poeta.nome} #{poeta.cognome}
         img(src=`${poeta.immagine}`)
   

@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const fs = require('fs');
 var faker = require('faker');
+const poet = require('./vettorePoeti');
+
 
 poeti = new Array();
 for(let i=0;i<10;i++){
@@ -30,10 +32,23 @@ let data = JSON.stringify(poeti);
 fs.writeFileSync('vettorePoeti.json', data);
 
 
+
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+
 var app = express();
+
+app.get('/profilo',(req, res) => {
+    const prof = poet.find(p => p.id === req.query.id);
+    console.log(prof)
+    res.render('profilo',{
+        title: `Profilo poeta`,prof:prof
+    });
+});
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

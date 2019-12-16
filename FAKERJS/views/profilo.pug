@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    article.container
+      div
+        h2 | Nome: #{prof.nome} 
+           | Cognome: #{prof.cognome}
+        img(src=`${prof.immagine}`)
+        h4 | Email: #{prof.email}
+        h4 | Sito Web: #{prof.sitoWeb}
+        h4 | Nazionalità: #{prof.nazionalita}
+  
