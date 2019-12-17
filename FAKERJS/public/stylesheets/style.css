@@ -4,5 +4,13 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: rgb(255, 38, 0);
+}
+
+h2 {
+    color: coral;
+}
+
+h4 {
+    color: mediumblue;
 }

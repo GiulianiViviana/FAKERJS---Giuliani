@@ -29,9 +29,9 @@ for(let i=0;i<10;i++){
 }
 
 let data = JSON.stringify(poeti);
-fs.writeFileSync('vettorePoeti.json', data);
+//fs.writeFileSync('vettorePoeti.json', data);
 
-
+//console.log(poet)
 
 
 
@@ -41,8 +41,8 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-app.get('/profilo',(req, res) => {
-    const prof = poet.find(p => p.id === req.query.id);
+app.get('/profilo', function(req, res){
+    const prof = poet.find(p => p.id == req.query.id);
     console.log(prof)
     res.render('profilo',{
         title: `Profilo poeta`,prof:prof

@@ -3,10 +3,15 @@ extends layout
 block content
     article.container
       div
-        h2 | Nome: #{prof.nome} 
+        h2 
+           | Nome: #{prof.nome} 
+        h2
            | Cognome: #{prof.cognome}
         img(src=`${prof.immagine}`)
         h4 | Email: #{prof.email}
         h4 | Sito Web: #{prof.sitoWeb}
         h4 | Nazionalità: #{prof.nazionalita}
-  
+        h3 | Poesie:
+        h4 #{prof.poesie[0]}
+        h4 #{prof.poesie[1]}
+        h4 #{prof.poesie[2]}
