@@ -10,6 +10,15 @@ router.get('/informazioni', function(req, res, next) {
   res.send(poeti);
 });
 
+router.get('/uno?id=',function(req,res,next) {
+  res.send();
+});
+
+router.get('/immagini', function(req,res,next) {
+    for(i=0; i<vettorePoeti.lenght;i++){
+        res.send(vettorePoeti.image);
+    }
+});
 
 
 
